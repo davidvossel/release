@@ -1,0 +1,11 @@
+{
+	"path": "ipi/gcp/ovn/ipi-gcp-ovn-workflow.yaml",
+	"owners": {
+		"approvers": [
+			"abhinavdahiya"
+		],
+		"reviewers": [
+			"abhinavdahiya"
+		]
+	}
+}
