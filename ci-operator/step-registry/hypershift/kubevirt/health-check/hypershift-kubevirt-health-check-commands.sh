@@ -18,6 +18,8 @@ until \
   [[ $(oc get nodepool ${CLUSTER_NAME} -n ${CLUSTER_NAMESPACE_PREFIX} -o jsonpath='{.spec.replicas}') \
     == $(oc --kubeconfig=${SHARED_DIR}/nested_kubeconfig get nodes --no-headers | wc -l) ]]; do
       echo "$(date --rfc-3339=seconds) Nested cluster's node count is not equal to the desired replicas in the NodePool. Retrying in 30 seconds."
+      oc get hc -A -o yaml
+      oc get np -A -o yaml
       oc get vmi -n ${CLUSTER_NAMESPACE}
       sleep 30s
 done
